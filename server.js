@@ -102,45 +102,45 @@
 //:====================================:ENVIRONMENT_DETECTION://
 //:F32_ARRAY:[075]:==========================================://
 
-    const F_ARR_F32 = function PRIVATE_F_ARR_F32(
-
-        i_len /** Length Of Array **/
-    ){
-        var o_arr = "[nil][f_arr_f32:o_arr]" ;
-        var   len = arguments.length ;
-        var   dex = 0 ;
-
-        if( len !=( i_len + 1 ) ){
-            ERR( "[F_ARR_F32:#IAI#]" );
-        }else{
-            o_arr = new Float32Array( i_len );
-            for( dex = 0 ; dex <=( i_len-1 ) ; dex ++ ){
-
-                o_arr[ dex ] = (
-                    (0.0) + ( arguments[ dex + 1 ] )
-                );;
-            };;
-        };;
-        Object.seal( o_arr /** #FAS# **/ );
-        return( o_arr );
-    };;
-
-    const F_CAR_F32 = function PRIVATE_F_CAR_F32(
-
-        i_len 
-    ){
-        //: #_DRY_INSTEAD_OF_KISS_WARNING_BECAUSE_LAZY_# ://
-
-        if( i_len <= 0 ){ ERR("[#YSMITF#]" ); };
-
-        var                o_arr = "[nil][f_car_f32]" ;
-                           o_arr =(
-
-            F_ARR_F32.apply( null , arguments )
-        );;
-        //- Object.freeze( o_arr ); #KFNFR# -//
-        return(            o_arr );
-    };;
+    const F_ARR_F32 = function PRIVATE_F_ARR_F32(               // [075]
+                                                                // [075]
+        i_len /** Length Of Array **/                           // [075]
+    ){                                                          // [075]
+        var o_arr = "[nil][f_arr_f32:o_arr]" ;                  // [075]
+        var   len = arguments.length ;                          // [075]
+        var   dex = 0 ;                                         // [075]
+                                                                // [075]
+        if( len !=( i_len + 1 ) ){                              // [075]
+            ERR( "[F_ARR_F32:#IAI#]" );                         // [075]
+        }else{                                                  // [075]
+            o_arr = new Float32Array( i_len );                  // [075]
+            for( dex = 0 ; dex <=( i_len-1 ) ; dex ++ ){        // [075]
+                                                                // [075]
+                o_arr[ dex ] = (                                // [075]
+                    (0.0) + ( arguments[ dex + 1 ] )            // [075]
+                );;                                             // [075]
+            };;                                                 // [075]
+        };;                                                     // [075]
+        Object.seal( o_arr /** #FAS# **/ );                     // [075]
+        return( o_arr );                                        // [075]
+    };;                                                         // [075]
+                                                                // [---]
+    const F_CAR_F32 = function PRIVATE_F_CAR_F32(               // [075]
+                                                                // [075]
+        i_len                                                   // [075]
+    ){                                                          // [075]
+        //: #_DRY_INSTEAD_OF_KISS_WARNING_BECAUSE_LAZY_# ://    // [075]
+                                                                // [075]
+        if( i_len <= 0 ){ ERR("[#YSMITF#]" ); };                // [075]
+                                                                // [075]
+        var                o_arr = "[nil][f_car_f32]" ;         // [075]
+                           o_arr =(                             // [075]
+                                                                // [075]
+            F_ARR_F32.apply( null , arguments )                 // [075]
+        );;                                                     // [075]
+        //- Object.freeze( o_arr ); #KFNFR# -//                 // [075]
+        return(            o_arr );                             // [075]
+    };;                                                         // [075]
 
 //:==========================================:F32_ARRAY:[075]://
 //:U08_ARRAY:[075]:==========================================://
@@ -2193,7 +2193,7 @@ require( "http" ).createServer( function( i_ask , i_giv ){
     //:--------------------------------------------------://    // [069]
 
     #KFNFR# : Keep Function Name For Readability                // [075]
- 
+                                                                // [075]
     #_DRY_INSTEAD_OF_KISS_WARNING_BECAUSE_LAZY_# :              // [075]
                                                                 // [075]
         I decided on D_R_Y instead of K_I_S_S because           // [075]
@@ -2201,9 +2201,9 @@ require( "http" ).createServer( function( i_ask , i_giv ){
         wanted to have fun and mess around with some            // [075]
         javascript. Let's see if it bytes me later.             // [075]
         -KanjiCoder                                             // [075]
-
+                                                                // [075]
     #YSMITF# : You Shot Marvin In The Face                      // [075]
-
+                                                                // [075]
     #FAS# : Fixed_Array_Size ( Object.seal( myArray ) );        // [075]
 
     #TESTYLE# : Tesselation Style , how to  +--------------+    // [074]
